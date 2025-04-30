@@ -91,3 +91,11 @@ class ReglaValidacionCalisto(ReglaValidacion):
             raise ValueError("La palabra calisto debe estar escrita con al menos dos letras en mayúscula")
 
         return True
+
+
+class Validador:
+    def __init__(self, regla: ReglaValidacion):
+        self.regla = regla
+
+    def es_valida(self, clave: str) -> bool:
+        return self.regla.es_valida(clave)
